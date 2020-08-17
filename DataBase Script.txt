@@ -1,0 +1,32 @@
+USE [ShopExample]
+GO
+/****** Object:  Table [dbo].[Product_Master]    Script Date: 15-Aug-2020 10:04:25 AM ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+CREATE TABLE [dbo].[Product_Master](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[Product_Name] [nvarchar](50) NULL,
+	[Product_Desc] [nvarchar](200) NULL,
+	[Price] [numeric](18, 0) NULL,
+	[Stock_Quantity] [varchar](50) NULL,
+	[ProductImage] [varchar](max) NULL,
+ CONSTRAINT [PK_Product_Master] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+GO
+SET IDENTITY_INSERT [dbo].[Product_Master] ON 
+GO
+INSERT [dbo].[Product_Master] ([id], [Product_Name], [Product_Desc], [Price], [Stock_Quantity], [ProductImage]) VALUES (7, N'Milk Powder', N'Milk powder is milk that has been turned into a dry substance by evaporating its water content.', CAST(250 AS Numeric(18, 0)), N'10', N'~/images/milk.jpg')
+GO
+INSERT [dbo].[Product_Master] ([id], [Product_Name], [Product_Desc], [Price], [Stock_Quantity], [ProductImage]) VALUES (8, N'Sugar', N'Sugar, any of numerous sweet, colourless, water-soluble compounds present in the sap of seed plants and the milk of mammals and making up the simplest group of carbohydrates.', CAST(120 AS Numeric(18, 0)), N'50', N'~/images/sugar.jpg')
+GO
+INSERT [dbo].[Product_Master] ([id], [Product_Name], [Product_Desc], [Price], [Stock_Quantity], [ProductImage]) VALUES (9, N'Washing Powder', N'Laundry detergent, or washing powder, is a type of detergent (cleaning agent) used for cleaning laundry. Laundry detergent is manufactured in powder and liquid form.', CAST(150 AS Numeric(18, 0)), N'50', N'~/images/powdwer.jpg')
+GO
+INSERT [dbo].[Product_Master] ([id], [Product_Name], [Product_Desc], [Price], [Stock_Quantity], [ProductImage]) VALUES (10, N'Soap', N'Soap is a salt of a fatty acid used in a variety of cleansing and lubricating products. In a domestic setting, soaps are surfactants usually used for washing, bathing, and other types of housekeeping.', CAST(110 AS Numeric(18, 0)), N'100', N'~/images/soap.jpg')
+GO
+SET IDENTITY_INSERT [dbo].[Product_Master] OFF
+GO
